@@ -1,34 +1,36 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
 import React from "react"
+import { StaticQuery, graphql, Link } from "gatsby"
+import PropTypes from "prop-types"
 
-const Header = ({ siteTitle }) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
+export const Header = () => (
+	<StaticQuery
+    query={graphql`
+			query navQuery {
+				allWordpressWpApiMenusMenusItems {
+					edges {
+						node {
+							items {
+								title
+								url
+								object_id
+							}
+						}
+					}
+				}
+			}
+		`}
+    render={data => (
+			<header class="container">
+				<div class="nav__wrapper">
+					<ul class="nav__list list-unstyled">
+						{data.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(( navItem ) => (
+							<li key={navItem.object_id} class="nav__list__item"><a href={navItem.url}>{navItem.title}</a></li>
+						))}
+					</ul>
+				</div>
+			</header>
+    )}
+  />
 )
 
 Header.propTypes = {

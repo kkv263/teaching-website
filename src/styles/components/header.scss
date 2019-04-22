@@ -1,0 +1,23 @@
+.nav__wrapper {
+	display:flex;
+	align-items:center;
+	padding: 1.6rem 0;
+}
+
+.nav__headline {
+	padding: 0;
+	margin: 0;
+	font-size: 3.2rem;
+}
+
+.nav__list {
+	display:flex;
+	margin-left: auto;
+	padding-bottom: 0;
+	margin-bottom: 0;
+
+	.nav__list__item {
+		margin-left: 1.6rem;
+		margin-bottom: 0;
+	}
+}

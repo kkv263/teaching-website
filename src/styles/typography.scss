@@ -1,0 +1,64 @@
+$bodyFont: 'Heebo', sans-serif;
+$headlineFont: 'Merriweather', serif;
+
+:root {
+	font-size: 10px;
+}
+
+body {
+	font-size: 1.6rem;
+	color: #000;
+	font-family: $bodyFont;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+	padding-bottom: 1rem;
+	line-height: 1.1;
+	font-family: $headlineFont;
+}
+
+h1, .h1 {
+	font-size: 4.8rem;
+}
+
+h2, .h2 {
+	font-size: 3.2rem;
+}
+
+h3, .h3 {
+	font-size: 2.4rem;
+}
+
+h4, .h4 {
+	font-size: 1.8rem;
+}
+
+h5, .h5 {
+	font-size: 1.4rem;
+}
+
+h6, .h6 {
+	font-size: 1.2rem;
+}
+
+p {
+	margin: 0;
+	padding-bottom: 1rem;
+}
+
+ul, ol {
+	list-style-position: inside;
+	padding-bottom: 1rem;
+	padding-left: 2.4rem;
+}
+
+.list-unstyled{
+	padding-left:0;
+	list-style:none;
+}
