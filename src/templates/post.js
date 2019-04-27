@@ -15,7 +15,6 @@ class PostTemplate extends Component {
     }
 }
 
-
 export default PostTemplate
 
 export const pageQuery = graphql`

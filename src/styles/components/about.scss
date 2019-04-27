@@ -1,0 +1,42 @@
+.about {
+	padding-bottom: 16rem;
+}
+
+.about__img__wrapper {
+	height: 100vh;
+}
+
+.bgImg {
+	background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.about__name {
+	color: #fff;
+	background-color: #373737;
+	display: inline-block;
+	padding: 1.6rem;
+	font-size: 8rem;
+	align-self: flex-end;
+	transform: translateX(16rem); 
+	z-index: 1;
+	text-align: right;
+}
+
+.about__content {
+	margin-top: auto;
+	padding-bottom: 3.2rem;
+}
+
+.about__col {
+	&--text {
+		min-height: 100vh;
+		display:flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		padding-top: 6.4rem;
+		align-items: flex-end;
+	}
+}

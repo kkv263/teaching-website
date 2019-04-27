@@ -7,7 +7,8 @@ $headlineFont: 'Merriweather', serif;
 
 body {
 	font-size: 1.6rem;
-	color: #000;
+	color: #222;
+	line-height: 1.25;
 	font-family: $bodyFont;
 }
 
@@ -20,7 +21,7 @@ h5,
 h6{
 	padding-bottom: 1rem;
 	line-height: 1.1;
-	font-family: $headlineFont;
+	font-family: $headlineFont, cursive;
 }
 
 h1, .h1 {
@@ -61,4 +62,14 @@ ul, ol {
 .list-unstyled{
 	padding-left:0;
 	list-style:none;
+}
+
+a,
+a:visited {
+	color: #222;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
 }
