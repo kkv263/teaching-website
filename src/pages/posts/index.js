@@ -11,7 +11,7 @@ class PostsTemplate extends Component {
                 <h1>Posts</h1>
 
                 {data.allWordpressPost.edges.map(({node}) => (
-                    <div key={node.slug} className={"post"} style={{ marginBottom: 50 }}>
+                    <div key={node.slug} className={"post"}>
                         <Link to={'post/' + node.slug}>
                             <h3>{node.title}</h3>
                         </Link>

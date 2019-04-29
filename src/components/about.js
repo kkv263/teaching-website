@@ -1,6 +1,5 @@
 import React from "react"
 import { useStaticQuery, graphql} from "gatsby"
-import PropTypes from "prop-types"
 import BackgroundImg from "gatsby-background-image"
 
 const About = () => {
@@ -25,14 +24,14 @@ const About = () => {
 	)
 		
 	return (
-	<div class="about">
-		<div class=" container">
-			<div class="row">
-				<div class="about__col--text col-md-6">
-					<h1 class="about__name">Marissa Fujarte</h1>	
-					<div class="about__content">
-						<h2 class="about__headline">{wordpressPost.title}</h2>	
-						<div dangerouslySetInnerHTML={{__html: wordpressPost.content}} class="about__text">
+	<div className="about">
+		<div className=" container">
+			<div className="row">
+				<div className="about__col--text col-md-6">
+					<h1 className="about__name">Marissa Fujarte</h1>	
+					<div className="about__content">
+						<h2 className="about__headline">{wordpressPost.title}</h2>	
+						<div dangerouslySetInnerHTML={{__html: wordpressPost.content}} className="about__text">
 					</div>
 					</div>
 				</div>

@@ -1,0 +1,57 @@
+.lessons {
+	padding-bottom: 16rem;
+}
+
+[data-accordion]{
+
+	summary::-webkit-details-marker,
+	details > summary::before {
+		color: #fff;
+		position: absolute;
+		right: 1rem;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	.accordion__globalControls {
+		text-align:right;
+		padding-bottom:0.8rem;
+	}
+
+	.accordion__toggle {
+		color: blue;
+	}
+
+	.accordion__tab {
+		background-color: blue;
+		&[open] {
+			background-color: darken(blue, 5%)
+		}
+	}
+
+	.accordion__header {
+		position: relative;
+		padding: .8rem 3.2rem .8rem 2.4rem;
+	}
+
+	.accordion__headline {
+		padding: 0;
+	}
+
+	.accordion__headline,
+	.accordion__tab-content {
+		color: #fff;
+		a {
+			color:#fff;
+			text-decoration: underline;
+		}
+		h1,h2,h3,h4,h5,h6 {
+			color:#fff;
+		}
+	}
+
+	.accordion__tab-content {
+		padding: .8rem 2.4rem;
+		background-color: darken(blue, 5%)
+	}
+}

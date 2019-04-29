@@ -1,26 +1,61 @@
 import React from "react"
-import { useStaticQuery, graphql} from "gatsby"
-import BackgroundImg from "gatsby-background-image"
+import { useStaticQuery, graphql, Link} from "gatsby"
+import Img from "gatsby-image"
 
 const Projects = () => {
-	// const { } = useStaticQuery (
-	// 	// graphql`
-	// 	// 	query projectsQuery {
+	const { allWordpressPost } = useStaticQuery (
+		graphql`
+			query projectsQuery {
+				allWordpressPost {
+					edges {
+						node {
+							title
+							categories {
+								name
+							}
+							featured_media {
+								localFile {
+									childImageSharp {
+										fluid(maxWidth:1023){
+											...GatsbyImageSharpFluid
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		`
+	)
 
-	// 	// 	}
-	// 	// `
-	// )
+	let projectArray = [];
+
+	(allWordpressPost.edges).forEach((post) => {
+		post.node.categories.forEach(postCategories => {
+			if (postCategories.name.toLowerCase() === "projects") {
+				projectArray.push(post.node);
+				return
+			}
+		})
+	});
 		
 	return (
-	<div class="projects">
-		<div class="container">
-			<div class="projects__wrapper">
-				<div class="projects__item">d</div>
-				<div class="projects__item">d</div>
-				<div class="projects__item">d</div>
-				<div class="projects__item">d</div>
+	<div className="projects">
+		<div className="container">
+			<div className="projects__wrapper">
+				<div className="projects__item">
+					<h2 className="projects__headline">UT Maker Projects</h2>
+				</div>
+				{projectArray.map((project) => (
+					<Link to="" title={project.title} className="projects__item">
+						<Img className="projects__img" fluid={project.featured_media.localFile.childImageSharp.fluid}/>
+						
+					</Link>
+				))}
 			</div>
-		</div>
+		</div> 
+
 	</div>
 	)
 }

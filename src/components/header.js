@@ -1,17 +1,5 @@
 import React, { Component } from "react"
 import { StaticQuery, graphql, Link } from "gatsby"
-import PropTypes from "prop-types"
-
-// (function navOuterFunction(){
-// 	function navFunction () {
-// 		var nav = document.querySelector('.nav__menu')
-// 		function navToggle () {
-// 			nav.setAttribute('data-state', nav.getAttribute('data-state') === 'open' ? "" : 'open');
-// 		}
-// 		nav.addEventListener('click', navToggle , false);		
-// 	}
-// 	document.addEventListener('DOMContentLoaded', navFunction, false);
-// })();
 
 class Header extends Component  {
 	constructor(props) {
@@ -31,11 +19,13 @@ class Header extends Component  {
 
 		return (
 		<>
-		<header class="container sticky">
-			<div class="nav__wrapper">
-				<h1 class="nav__headline">mf.</h1>
-				<div class="nav__menu" data-open={isMenuOpen} > 
-					<span class="nav__menu__span" onClick={this.handleClick}>Menu</span>
+		<header className="container sticky">
+			<div className="nav__wrapper">
+				<Link to="">
+					<h1 className="nav__headline">mf.</h1>
+				</Link>
+				<div className="nav__menu" data-open={isMenuOpen} > 
+					<span className="nav__menu__span" onClick={this.handleClick}>Menu</span>
 					<StaticQuery
 						query={	graphql`
 							query navQuery {
@@ -53,9 +43,9 @@ class Header extends Component  {
 							}
 						`}
 						render={data => (
-							<ul class="nav__list list-unstyled">
+							<ul className="nav__list list-unstyled">
 								{data.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(( navItem ) => (
-									<li key={navItem.object_id} class="nav__list__item"><a href={navItem.url}>{navItem.title}</a></li>
+									<li key={navItem.object_id} className="nav__list__item"><a href={navItem.url}>{navItem.title}</a></li>
 								))}
 							</ul>
 						)}
@@ -66,14 +56,6 @@ class Header extends Component  {
 		</>
 		)
 	}
-}
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
-
-Header.defaultProps = {
-  siteTitle: ``,
 }
 
 export default Header
