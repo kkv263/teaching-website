@@ -6,26 +6,23 @@
 
 	summary::-webkit-details-marker,
 	details > summary::before {
-		color: #fff;
 		position: absolute;
 		right: 1rem;
 		top: 50%;
 		transform: translateY(-50%);
-	}
-
-	.accordion__globalControls {
-		text-align:right;
-		padding-bottom:0.8rem;
-	}
-
-	.accordion__toggle {
-		color: blue;
+		transition: all .1s ease-out;
 	}
 
 	.accordion__tab {
-		background-color: blue;
+		background-color: #fff;
+		border:1px solid #ccc;
+		padding: .4rem;
 		&[open] {
-			background-color: darken(blue, 5%)
+			background-color: #373737;
+			color: #fff;
+			.accordion__tab-content {
+				background-color: #373737;
+			}
 		}
 	}
 
@@ -36,11 +33,11 @@
 
 	.accordion__headline {
 		padding: 0;
+		margin-bottom: 0;
 	}
 
 	.accordion__headline,
 	.accordion__tab-content {
-		color: #fff;
 		a {
 			color:#fff;
 			text-decoration: underline;
@@ -48,10 +45,12 @@
 		h1,h2,h3,h4,h5,h6 {
 			color:#fff;
 		}
+		transition: all .1s ease-out;
 	}
 
 	.accordion__tab-content {
 		padding: .8rem 2.4rem;
-		background-color: darken(blue, 5%)
+		background-color: #fff;
+		transition: all .1s ease-out;
 	}
 }

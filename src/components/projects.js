@@ -48,7 +48,7 @@ const Projects = () => {
 					<h2 className="projects__headline">UT Maker Projects</h2>
 				</div>
 				{projectArray.map((project) => (
-					<Link to="" title={project.title} className="projects__item">
+					<Link key={project.title} to="/" title={project.title} className="projects__item">
 						<Img className="projects__img" fluid={project.featured_media.localFile.childImageSharp.fluid}/>
 						
 					</Link>
